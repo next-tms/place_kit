@@ -18,8 +18,6 @@ $ gem install spacetime
 
 ## Standard Usage
 
-Start off by initializing the `Carrier` provided by a `Carrier` plug-in:
-
 ```ruby
 require 'spacetime'
 
