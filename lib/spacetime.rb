@@ -5,7 +5,7 @@ require 'csv'
 require 'fastcsv'
 
 module Spacetime
-  DB = File.join('lib', 'db', 'GeoLite2-City-Locations-en.csv')
+  DB = File.join(__dir__, 'db', 'GeoLite2-City-Locations-en.csv')
 
   @cache = {}
 
