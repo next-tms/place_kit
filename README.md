@@ -1,4 +1,4 @@
-# Spacetime
+# PlaceKit
 
 Time zone lookup by country, region, and city for those times when latitude/longitude coordinates just aren’t available 🚀
 
@@ -7,25 +7,25 @@ Time zone lookup by country, region, and city for those times when latitude/long
 Using bundler, add to the `Gemfile`:
 
 ```ruby
-gem 'spacetime'
+gem 'place_kit'
 ```
 
 Or standalone:
 
 ```
-$ gem install spacetime
+$ gem install place_kit
 ```
 
 ## Standard Usage
 
 ```ruby
-require 'spacetime'
+require 'place_kit'
 
-Spacetime.lookup('US', 'CA', 'Los Angeles')
+PlaceKit.lookup('US', 'CA', 'Los Angeles')
 
 # Case insensitive
-Spacetime.lookup('us', 'CA', 'los Angeles')
+PlaceKit.lookup('us', 'CA', 'los Angeles')
 
 # Symbols work too
-Spacetime.lookup(:US, :CA, :Los_Angeles) # Symbols
+PlaceKit.lookup(:US, :CA, :Los_Angeles) # Symbols
 ```

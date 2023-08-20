@@ -4,7 +4,7 @@ require 'active_support/all'
 require 'csv'
 require 'fastcsv'
 
-module Spacetime
+module PlaceKit
   DB = File.join(__dir__, 'db', 'GeoLite2-City-Locations-en.csv')
 
   @cache = {}

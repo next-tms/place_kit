@@ -1,10 +1,17 @@
 .DS_Store
+test.xml
+sample.rb
+*.orig
+pkg
+.dotest
 Gemfile*.lock
 .rvmrc
+test/fixtures/live_credentials.yml
 .rbenv-version
 .ruby-version
 .yardoc/
 doc/
 .idea
 .bundle
+.byebug_history
 *.gem

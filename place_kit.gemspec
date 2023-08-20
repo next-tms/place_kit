@@ -3,11 +3,11 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'spacetime/version'
+require 'place_kit/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'spacetime'
-  spec.version = Spacetime::VERSION
+  spec.name = 'place_kit'
+  spec.version = PlaceKit::VERSION
   spec.date = '2022-04-02'
 
   spec.authors = ['Third Party Transportation Systems LLC']
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Time zone lookup by country, region, and city 🚀'
   spec.description = 'Time zone lookup by country, region, and city for those times when latitude/longitude coordinates just aren’t available 🚀'
 
-  spec.homepage = 'https://github.com/next-tms/spacetime'
+  spec.homepage = 'https://github.com/next-tms/place_kit'
 
   spec.files = Dir['lib/**/*']
   spec.require_paths = ['lib']
