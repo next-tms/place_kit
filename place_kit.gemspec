@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activesupport', '>= 6.0.0', '< 7.1'
   spec.add_dependency 'fastcsv', '~> 0.0.6'
 
+  spec.add_development_dependency 'rake', '~> 13.0.6'
   spec.add_development_dependency 'rubocop-next', '~> 1.0.4'
 
   spec.required_ruby_version = '>= 3.2.0'
