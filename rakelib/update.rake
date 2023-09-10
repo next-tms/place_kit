@@ -10,10 +10,10 @@ task :update, %i[license_key] do |_task, args|
 
   uri = URI.parse(BASE_URL)
   uri.query = {
-                edition_id: 'GeoLite2-City-CSV',
-                license_key: '123',
-                suffix: 'zip'
-              }
+    edition_id: 'GeoLite2-City-CSV',
+    license_key: '123',
+    suffix: 'zip'
+  }
               .map { |key, value| "#{key}=#{value}" }
               .join('&')
 
