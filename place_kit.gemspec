@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*']
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '>= 6.0.0', '< 7.1'
+  spec.add_dependency 'activesupport', '>= 6.0.0', '< 7.2'
   spec.add_dependency 'fastcsv', '~> 0.0.6'
 
   spec.add_development_dependency 'rubocop-next', '~> 1.0.6'
