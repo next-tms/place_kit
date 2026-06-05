@@ -2,7 +2,6 @@
 
 require 'active_support/all'
 require 'csv'
-require 'fastcsv'
 
 module PlaceKit
   DB = File.join(__dir__, 'db', 'GeoLite2-City-Locations-en.csv')
@@ -25,18 +24,16 @@ module PlaceKit
     @cache[country] ||= {}
     @cache[country][region] ||= {}
 
-    File.open(DB) do |f|
-      FastCSV.raw_parse(f) do |entry|
-        next unless entry[4]&.downcase == country &&
-                    entry[6]&.downcase == region &&
-                    entry[10]&.downcase == city
+    CSV.foreach(DB) do |entry|
+      next unless entry[4]&.downcase == country &&
+                  entry[6]&.downcase == region &&
+                  entry[10]&.downcase == city
 
-        time_zone = ActiveSupport::TimeZone.new(entry[12])
+      time_zone = ActiveSupport::TimeZone.new(entry[12])
 
-        @cache[country][region][city] = time_zone
+      @cache[country][region][city] = time_zone
 
-        return time_zone
-      end
+      return time_zone
     end
 
     @cache[country][region][city] = nil
