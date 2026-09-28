@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*']
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '>= 7.1', '< 8.1.4'
+  spec.add_dependency 'activesupport', '>= 7.1', '< 8.1.5'
   spec.add_dependency 'csv', '~> 3.3'
 
   spec.add_development_dependency 'benchmark', '~> 0.5'
