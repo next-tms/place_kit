@@ -23,8 +23,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'csv', '~> 3.3'
 
   spec.add_development_dependency 'benchmark', '~> 0.5'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.13'
   spec.add_development_dependency 'rubocop-next', '~> 1.0.6'
+  spec.add_development_dependency 'rubyzip', '~> 3.0'
 
   spec.required_ruby_version = '>= 3.2.0'
 end

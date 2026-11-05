@@ -1,0 +1,31 @@
+name: Update GeoLite2
+on:
+  schedule:
+    - cron: '0 12 * * 3'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f # v1.310.0
+        with:
+          ruby-version: '3.2'
+      - run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - run: bundle exec rake update
+        env:
+          MAXMIND_LICENSE_KEY: ${{ secrets.MAXMIND_LICENSE_KEY }}
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          add-paths: lib/db
+          branch: update-geolite2
+          delete-branch: true
+          commit-message: Update GeoLite2 City locations
+          title: Update GeoLite2 City locations
+          body: Automated update from the MaxMind GeoLite2 City CSV.
